@@ -1,0 +1,17 @@
+@import '@styles/colors';
+@import '@styles/text-size';
+
+.button {
+    box-sizing: border-box;
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 50px;
+    border-radius: 10px;
+    background-color: $color-pure-blue;
+    color: $color-white;
+    cursor: pointer;
+    font-size: $text-md;
+    font-weight: 700;
+    letter-spacing: 1px;
+}

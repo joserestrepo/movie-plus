@@ -1,0 +1,29 @@
+// breakpoints
+$small-screen: 767px;
+$medium-screen: 768px;
+$large-screen: 992px;
+$extra-large-screen: 1200px;
+
+@mixin small-screen {
+  @media screen and (max-width: #{$small-screen}) {
+    @content;
+  }
+}
+
+@mixin medium-screen {
+  @media screen and (min-width: #{$medium-screen}) and (max-width: #{$large-screen - 1}) {
+    @content;
+  }
+}
+
+@mixin large-screen {
+  @media screen and (min-width: #{$large-screen}) and (max-width: #{$extra-large-screen - 1}) {
+    @content;
+  }
+}
+
+@mixin extra-large-screen {
+  @media screen and (min-width: #{$extra-large-screen}) {
+    @content;
+  }
+}

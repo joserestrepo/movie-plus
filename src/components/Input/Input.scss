@@ -1,0 +1,45 @@
+@import '@styles/text-size';
+@import '@styles/colors';
+
+.container-control {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+
+    &__label {
+        text-align: left;
+        margin-bottom: 5px;
+        font-size: $text-md;
+        cursor: text;
+        color: $color-dark-gray;
+        transition: font 0.1s ease, top 0.1s ease, transform 0.1s ease;
+        transition: font 0.1s ease, top 0.1s ease, transform 0.1s ease,
+            -webkit-transform 0.1s ease, -moz-transform 0.1s ease,
+            -o-transform 0.1s ease;
+    }
+
+    &__input {
+        box-sizing: border-box;
+        height: 40px;
+        border: none;
+        border-radius: 5px;
+        padding: 0px 20px;
+        outline: none;
+        background-color: $color-very-dark-gray;
+        color: $color-white;
+        transition: border 0.1s ease;
+        transition: font 0.1s ease,
+            -webkit-transform 0.1s ease, -moz-transform 0.1s ease,
+            -o-transform 0.1s ease;
+
+        &--invalid {
+            border-bottom: 1px solid $color-vived-red;
+        }
+    }
+
+    &__text-invalid {
+        font-size: $text-xs;
+        margin: 0;
+        color: $color-vived-red;
+    }
+}

@@ -1,0 +1,12 @@
+@import '@styles/text-size';
+@import '@styles/colors';
+
+
+.alert {
+    background-color: $color-vived-red;
+    color: $color-white;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 20px;
+    font-size: $text-md;
+}
