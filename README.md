@@ -1,30 +1,43 @@
-# React + TypeScript + Vite
+# Instalación de "movies-plus"
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sigue estos pasos para configurar y ejecutar el proyecto "movies-plus". Asegúrate de tener Node.js y npm instalados en tu sistema antes de comenzar.
 
-Currently, two official plugins are available:
+## Paso 1: Clonar el Repositorio
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+git clone https://github.com/joserestrepo/movies-plus.git
+cd movies-plus
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Paso 2: Instalar Dependencias
+
+```bash
+npm install
+```
+
+## Paso 3: Ejecutar en Modo de Desarrollo
+
+```bash
+npm run dev
+```
+
+Este comando iniciará el servidor de desarrollo Vite y abrirá la aplicación en tu navegador predeterminado. Puedes acceder a la aplicación en http://localhost:5173/login.
+
+## Versiones de las Dependencias
+
+A continuación, se detallan las versiones de las principales dependencias utilizadas en el proyecto:
+
+- Node.js: 18.19.1
+- npm: 10.2.4
+- TypeScript: 5.3.3
+- Vite: 5.1.4
+- React: 18.2.0
+- React Router DOM: 6.22.2
+- Redux: 5.0.1
+- Tailwind CSS: 3.4.1
+- Firebase: 10.8.1
+  Nota: Asegúrate de tener las versiones de Node.js y npm que sean compatibles con las dependencias del proyecto. Puedes encontrar información específica sobre las versiones en el archivo package.json.
+
+```bash
+npm run dev
+```
