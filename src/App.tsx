@@ -1,20 +1,16 @@
 import './App.css'
 import { RouterProvider } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { FirebaseService } from '@service/firebase.service'
 import RoutesApp from './routes'
+import { validateUserAuthenticity } from '@redux/slices/auth.slice'
 
 const App: React.FC = () => {
-  const [_, setIsAuthenticationValidated] = useState(false)
   const { router } = RoutesApp()
   const dispatch = useDispatch()
+
   useEffect(() => {
-    const unsubscribe = FirebaseService.onAuthStateChanged(
-      dispatch,
-      setIsAuthenticationValidated.bind(this),
-    )
-    return () => unsubscribe()
+    dispatch({ type: validateUserAuthenticity.type })
   }, [])
 
   return (

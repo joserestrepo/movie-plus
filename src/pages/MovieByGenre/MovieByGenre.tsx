@@ -25,7 +25,10 @@ const MovieByGenreComponent: React.FC = () => {
   return (
     <>
       {loading && <Loader />}
-      <div className="w-full bg-white relative rounded-lg">
+      <div
+        className="w-full bg-white relative rounded-lg"
+        data-testid="card-backdrop"
+      >
         <CardBackdropComponent movie={mostPopular} />
       </div>
       <ContentCategoryComponent

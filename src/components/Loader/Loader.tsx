@@ -7,7 +7,10 @@ const Loader: React.FC = () => {
                     items-center h-lvh bg-gray-700 bg-opacity-70"
       data-testid="loader-container"
     >
-      <div className="animate-spin border-4 border-t-blue-500 w-[50px] h-[50px] rounded-full"></div>
+      <div
+        data-testid="loader-element"
+        className="animate-spin border-4 border-t-blue-500 w-[50px] h-[50px] rounded-full"
+      ></div>
     </div>
   )
 }

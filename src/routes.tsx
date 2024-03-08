@@ -12,10 +12,6 @@ const MovieByGenreComponent = lazy(
 const ContentDetailComponent = lazy(
   () => import('@pages/ContentDetail/ContentDetail'),
 )
-const SelectGenresComponent = lazy(
-  () => import('@pages/SelectGenres/SelectGenres'),
-)
-
 const RoutesApp = () => {
   const router = createBrowserRouter([
     {
@@ -48,16 +44,6 @@ const RoutesApp = () => {
         <PrivateRoute redirecTo="/login">
           <Suspense fallback={<Loader />}>
             <ContentDetailComponent />
-          </Suspense>
-        </PrivateRoute>
-      ),
-    },
-    {
-      path: '/select-genres',
-      element: (
-        <PrivateRoute redirecTo="/login">
-          <Suspense fallback={<Loader />}>
-            <SelectGenresComponent />
           </Suspense>
         </PrivateRoute>
       ),

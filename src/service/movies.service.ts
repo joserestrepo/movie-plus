@@ -76,14 +76,3 @@ export class MoviesService {
     }
   }
 }
-
-/**
- *  title: movieDetail.data.title,
-          release_date: movieDetail.data.release_date,
-          overview: movieDetail.data.overview,
-          poster_path: movieDetail.data.poster_path,
-          vote_average: movieDetail.data.vote_average,
-          runtime: movieDetail.data.runtime,
-          director,
-          production_companies: movieDetail.data.production_companies,
-*/

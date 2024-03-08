@@ -1,10 +1,12 @@
 import {
+  authenticationValidated,
   setCurrentUser,
   signIn,
   signInFailure,
   signInSucess,
   signOut,
   signOutSucess,
+  validateUserAuthenticity,
 } from '@redux/slices/auth.slice'
 import { AuthService } from '@service/auth.service'
 import { all, call, put, takeLatest } from 'redux-saga/effects'
@@ -30,6 +32,19 @@ function* onSign() {
   )
 }
 
+function* onValidateUserAuthenticity() {
+  yield takeLatest(validateUserAuthenticity.type, function* () {
+    try {
+      const { user } = yield AuthService.onAuthStateChanged()
+      yield put(signOutSucess())
+      yield put(setCurrentUser(user))
+      yield put(signInSucess(user))
+      yield put(authenticationValidated())
+    } catch (error: any) {
+      yield put(signInFailure('Error inesperado. Comunicase con soporte'))
+    }
+  })
+}
 function* onSignOut() {
   yield takeLatest(signOut.type, function* () {
     try {
@@ -42,5 +57,5 @@ function* onSignOut() {
 }
 
 export function* authSagas() {
-  yield all([call(onSign), call(onSignOut)])
+  yield all([call(onSign), call(onSignOut), call(onValidateUserAuthenticity)])
 }

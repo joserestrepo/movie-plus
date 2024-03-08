@@ -11,18 +11,15 @@ const useAsync = (
   useEffect(() => {
     setLoading(true)
     let isActive = true
-    asyncFn().then(
-      (result) => {
+    asyncFn()
+      .then((result) => {
         if (isActive) {
           successFunction(result.data)
         }
+      })
+      .finally(() => {
         setLoading(false)
-      },
-      (error) => {
-        setLoading(false)
-        throw error
-      },
-    )
+      })
     return () => {
       returnFunction && returnFunction()
       isActive = false

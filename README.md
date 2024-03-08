@@ -23,7 +23,7 @@ npm run dev
 
 Este comando iniciará el servidor de desarrollo Vite y abrirá la aplicación en tu navegador predeterminado. Puedes acceder a la aplicación en http://localhost:5173/login.
 
-## Versiones de las Dependencias
+# Versiones de las Dependencias
 
 A continuación, se detallan las versiones de las principales dependencias utilizadas en el proyecto:
 
@@ -36,8 +36,9 @@ A continuación, se detallan las versiones de las principales dependencias utili
 - Redux: 5.0.1
 - Tailwind CSS: 3.4.1
 - Firebase: 10.8.1
-  Nota: Asegúrate de tener las versiones de Node.js y npm que sean compatibles con las dependencias del proyecto. Puedes encontrar información específica sobre las versiones en el archivo package.json.
 
-```bash
-npm run dev
-```
+Nota: Asegúrate de tener las versiones de Node.js y npm que sean compatibles con las dependencias del proyecto. Puedes encontrar información específica sobre las versiones en el archivo package.json.
+
+# Credenciales de acceso
+
+Para ingresar a la plataforma podemos usar como email **jose@gmail.com** y como contraseña **123456**. Estas son credenciales válidas para ingresar con éxito

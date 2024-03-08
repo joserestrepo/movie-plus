@@ -21,4 +21,12 @@ export class AuthService {
       throw error
     }
   }
+
+  static async onAuthStateChanged() {
+    try {
+      return await FirebaseService.onAuthStateChanged()
+    } catch (error) {
+      throw error
+    }
+  }
 }

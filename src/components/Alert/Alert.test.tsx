@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react'
 import '@testing-library/jest-dom'
-import AlertComponent from './Alert'
+import AlertComponent from '@components/Alert/Alert'
 
 describe('AlertComponent', () => {
   test('renderiza correctamente con el texto proporcionado', () => {

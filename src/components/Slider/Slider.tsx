@@ -15,21 +15,24 @@ const SliderComponent: React.FC<{ movies: Array<Movie> }> = ({ movies }) => {
   }
 
   return (
-    <div className="relative">
+    <div className="relative" data-testid="sliderComponent">
       <HiChevronLeft
         className="hidden md:block text-white text-[30px] absolute
         mx-8 mt-[150px] lg:mt-[200px] cursor-pointer "
         onClick={() => sliderLeft(elementRef.current)}
+        data-testid="chevronLeft"
       />
       <HiChevronRight
         className="hidden md:block text-white text-[30px] absolute
         mx-8 mt-[150px] lg:mt-[200px] cursor-pointer right-0"
         onClick={() => sliderRight(elementRef.current)}
+        data-testid="chevronRight"
       />
 
       <div
         className="flex overflow-x-auto w-full px-16 py-4 scrollbar-none scroll-smooth"
         ref={elementRef}
+        data-testid="sliderElement"
       >
         {movies.map((movie, index) => (
           <SliderItemComponent movie={movie} key={index} />

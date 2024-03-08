@@ -58,11 +58,15 @@ const LoginComponent: React.FC = () => {
 
   return (
     <>
-      {authState.loading && <Loader />}
+      {authState.loading && <Loader data-testid="loader" />}
       <div className="container-login">
         <div className="card-login">
           <h1 className="card-login__title">Inicia sesión</h1>
-          <form onSubmit={handleSubmit} className="container-form">
+          <form
+            data-testid="form"
+            onSubmit={handleSubmit}
+            className="container-form"
+          >
             {authState.inValid && (
               <AlertComponent text={authState.error ?? ''} />
             )}

@@ -33,6 +33,7 @@ const authSlice = createSlice({
       isSuccess: true,
       isAuthenticated: true,
       islogOut: false,
+      isAuthenticationValidated: true,
     }),
 
     signInFailure: (state, action) => ({
@@ -40,6 +41,10 @@ const authSlice = createSlice({
       loading: false,
       error: action.payload,
       inValid: true,
+    }),
+
+    validateUserAuthenticity: (state) => ({
+      ...state,
     }),
 
     authenticationValidated: (state) => ({
@@ -74,6 +79,7 @@ export const {
   authenticationValidated,
   signOut,
   signOutSucess,
+  validateUserAuthenticity,
 } = authSlice.actions
 
 export default authSlice.reducer
