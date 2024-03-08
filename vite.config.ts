@@ -11,10 +11,12 @@ export default defineConfig({
       '@styles': path.resolve(__dirname, 'src/styles'),
       '@hooks': path.resolve(__dirname, 'src/hooks'),
       '@models': path.resolve(__dirname, 'src/models'),
-      '@firebase-utils': path.resolve(__dirname, 'src/firebase'),
+      '@config': path.resolve(__dirname, 'src/config'),
       '@redux': path.resolve(__dirname, 'src/redux'),
       '@adapters': path.resolve(__dirname, 'src/adapters'),
       '@service': path.resolve(__dirname, 'src/service'),
+      '@assets': path.resolve(__dirname, 'src/assets'),
+      '@utils': path.resolve(__dirname, 'src/utils'),
     },
   },
 })

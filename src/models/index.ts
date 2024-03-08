@@ -1,0 +1,5 @@
+export * from './genre.interface'
+export * from './movie.interface'
+export * from './movie-detail.interface'
+export * from './route.model'
+export * from './user.interface'

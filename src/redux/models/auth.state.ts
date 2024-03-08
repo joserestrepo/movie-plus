@@ -6,5 +6,7 @@ export interface AuthState {
   error: string | null
   inValid: boolean
   isAuthenticated: boolean
+  isAuthenticationValidated: boolean
   isSuccess: boolean
+  islogOut: boolean
 }

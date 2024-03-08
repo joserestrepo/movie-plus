@@ -10,7 +10,7 @@ import { signIn } from '@redux/slices/auth.slice'
 import { signInAction } from '@redux/actions/auth.actions'
 import { AuthState } from '@redux/models/auth.state'
 import AlertComponent from '@components/Alert/Alert'
-import { redirect } from 'react-router-dom'
+import { Navigate, redirect } from 'react-router-dom'
 import Loader from '@components/Loader/Loader'
 
 const LoginComponent: React.FC = () => {
@@ -50,6 +50,10 @@ const LoginComponent: React.FC = () => {
         payload: { email: email.value, password: password.value },
       }),
     )
+  }
+
+  if (authState.isSuccess) {
+    return <Navigate to="/home" replace />
   }
 
   return (

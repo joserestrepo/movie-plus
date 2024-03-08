@@ -1,16 +1,24 @@
 import { createUserAdapter } from '@adapters/user.adapter'
-import {
-  auth,
-  signInWithEmailAndPassword,
-} from '@firebase-utils/firebase.utils'
+import { FirebaseService } from './firebase.service'
 
-export const signInService = async (email: string, password: string) => {
-  try {
-    const result = await signInWithEmailAndPassword(auth, email, password)
+export class AuthService {
+  static async signIn(email: string, password: string) {
+    try {
+      const result = await FirebaseService.signInWithEmailAndPassword(
+        email,
+        password,
+      )
+      return createUserAdapter(result.user)
+    } catch (error) {
+      throw error
+    }
+  }
 
-    const user = createUserAdapter(result.user)
-    return { user }
-  } catch (error) {
-    throw error
+  static async signOut() {
+    try {
+      return await FirebaseService.signOut()
+    } catch (error) {
+      throw error
+    }
   }
 }

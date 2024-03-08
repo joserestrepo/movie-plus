@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { AuthState } from 'redux/models/auth.state'
+import { AuthState } from '@redux/models/auth.state'
 
 const initialState: AuthState = {
   currentUser: null,
@@ -8,35 +8,72 @@ const initialState: AuthState = {
   inValid: false,
   isAuthenticated: false,
   isSuccess: false,
+  isAuthenticationValidated: false,
+  islogOut: false,
 }
+
 const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    setCurrentUser: (state, action) => {
-      state.currentUser = { ...state.currentUser, ...action.payload }
-    },
+    setCurrentUser: (state, action) => ({
+      ...state,
+      currentUser: { ...action.payload },
+    }),
 
-    signIn: (state) => {
-      state.loading = true
-    },
+    signIn: (state) => ({
+      ...state,
+      loading: true,
+    }),
 
-    signInSucess: (state) => {
-      state.loading = false
-      state.inValid = false
-      state.isSuccess = true
-      state.isAuthenticated = true
-    },
+    signInSucess: (state) => ({
+      ...state,
+      loading: false,
+      inValid: false,
+      isSuccess: true,
+      isAuthenticated: true,
+      islogOut: false,
+    }),
 
-    signInFailure: (state, action) => {
-      state.loading = false
-      state.error = action.payload
-      state.inValid = true
-    },
+    signInFailure: (state, action) => ({
+      ...state,
+      loading: false,
+      error: action.payload,
+      inValid: true,
+    }),
+
+    authenticationValidated: (state) => ({
+      ...state,
+      isAuthenticationValidated: true,
+    }),
+
+    signOut: (state) => ({
+      ...state,
+      loading: true,
+    }),
+
+    signOutSucess: (state) => ({
+      ...state,
+      currentUser: null,
+      loading: false,
+      error: null,
+      inValid: false,
+      isAuthenticated: false,
+      isSuccess: false,
+      isAuthenticationValidated: false,
+      islogOut: true,
+    }),
   },
 })
 
-export const { setCurrentUser, signIn, signInSucess, signInFailure } =
-  authSlice.actions
+export const {
+  setCurrentUser,
+  signIn,
+  signInSucess,
+  signInFailure,
+  authenticationValidated,
+  signOut,
+  signOutSucess,
+} = authSlice.actions
 
 export default authSlice.reducer
